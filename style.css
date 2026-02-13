@@ -1,0 +1,146 @@
+:root {
+  --bg: #120015;
+  --card: rgba(255, 255, 255, 0.1);
+  --text: #fff5f8;
+  --accent: #ff6fa5;
+  --accent-soft: #ffc2d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #3f003f 0%, var(--bg) 48%, #09000f 100%);
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(980px, 92%);
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  color: var(--accent-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1,
+h2 {
+  font-family: 'Dancing Script', cursive;
+  margin: 0.5rem 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: #ffdbe9;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.gallery,
+.letter,
+.music {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 1.4rem;
+  backdrop-filter: blur(8px);
+  margin-top: 1.2rem;
+}
+
+.helper-text {
+  margin-top: 0;
+  color: var(--accent-soft);
+  font-size: 0.95rem;
+}
+
+.photo-upload {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff8ab8, #e77dd8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.letter article {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+audio {
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+}
+
+.hearts {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: rgba(255, 166, 200, 0.6);
+  animation: float-up linear forwards;
+}
+
+@keyframes float-up {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
